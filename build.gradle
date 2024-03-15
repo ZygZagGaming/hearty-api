@@ -138,7 +138,7 @@ tasks.withType(ProcessResources).configureEach {
 publishing {
     publications {
         gpr(MavenPublication) {
-            artifactId = "hearty-$minecraft_version-api"
+            artifactId = "hearty-$minecraft_version-neoforge-api"
 
             artifact tasks.jar
 //            artifact tasks.sourcesJar
