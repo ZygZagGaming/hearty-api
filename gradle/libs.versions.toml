@@ -1,0 +1,9 @@
+[versions]
+neogradle = "7.0.96"
+neo = "20.4.200"
+
+[libraries]
+neo = { group = "net.neoforged", name = "neoforge", version.ref = "neo" }
+
+[plugins]
+ng-userdev = { id = "net.neoforged.gradle.userdev", version.ref = "neogradle" }
