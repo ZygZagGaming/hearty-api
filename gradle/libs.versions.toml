@@ -1,6 +1,6 @@
 [versions]
-neogradle = "7.0.96"
-neo = "20.4.200"
+neogradle = "7.0.159"
+neo = "21.1.8"
 
 [libraries]
 neo = { group = "net.neoforged", name = "neoforge", version.ref = "neo" }
