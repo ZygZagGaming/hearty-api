@@ -18,6 +18,8 @@ jobs:
         uses: gradle/actions/setup-gradle@4 # v3.1.0
         env:
           VERSION: ${{ github.event.tag_name }}
+        with:
+          gradle-version: 8.8
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Publish package
