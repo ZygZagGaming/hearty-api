@@ -24,7 +24,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Publish package
-        run: ./gradlew publish
+        run: ./gradlew publish --no-daemon
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ github.event.release.tag_name }}
