@@ -28,7 +28,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 base {
-    archivesName = "hearty-$minecraft_version-api"
+    archivesName = "hearty-api"
 }
 
 tasks.named("jar", Jar).configure {
