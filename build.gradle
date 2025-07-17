@@ -120,7 +120,7 @@ minecraft {
 publishing {
     publications {
         gpr(MavenPublication) {
-            artifactId = "hearty-$minecraft_version-neoforge-api"
+            artifactId = "hearty-api"
 
             artifact tasks.jar
 //            artifact tasks.sourcesJar
