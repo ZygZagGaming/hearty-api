@@ -28,7 +28,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 base {
-    archivesName = "hearty-$minecraft_version-api"
+    archivesName = "hearty-api"
 }
 
 tasks.named("jar", Jar).configure {
@@ -121,7 +121,7 @@ minecraft {
 publishing {
     publications {
         gpr(MavenPublication) {
-            artifactId = "hearty-$minecraft_version-neoforge-api"
+            artifactId = "hearty-api"
 
             artifact tasks.jar
             artifact tasks.sourcesJar
