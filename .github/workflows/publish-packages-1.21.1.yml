@@ -23,7 +23,7 @@ jobs:
         env:
           VERSION: ${{ github.event.tag_name }}
         with:
-          gradle-version: 8.8
+          gradle-version: 8.13
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Publish package
