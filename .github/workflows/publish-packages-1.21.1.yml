@@ -19,7 +19,7 @@ jobs:
           java-version: 21
           architecture: x64
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v3.5.0
+        uses: gradle/actions/setup-gradle@v6
         env:
           VERSION: ${{ github.event.tag_name }}
         with:
