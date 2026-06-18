@@ -7,7 +7,11 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Contains <code>ResourceKey</code>s and <code>Registry</code>s for <code>HeartLayer</code>s and <code>HeartType</code>s.
  */
-public class HeartyRegistries {
+public record HeartyRegistries(
+        Registry<HalfHeartLayer> halfHeartLayers,
+        Registry<HeartLayer> heartLayers,
+        Registry<HeartType> heartTypes
+) {
     /**
      * The <code>ResourceKey</code> for <code>HALF_HEART_LAYER_REGISTRY</code>.
      */
