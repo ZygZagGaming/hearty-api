@@ -1,6 +1,10 @@
 package io.github.zygzaggaming.hearty.api;
 
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 
 import java.util.function.Function;
 
@@ -33,6 +37,8 @@ public abstract class HeartType implements Comparable<HeartType> {
      */
     public final double priority;
 
+    public final ResourceKey<HeartType> resourceKey;
+
     /**
      * Constructs a new <code>HeartType</code>.
      * @param id this <code>HeartType</code>'s id
@@ -41,6 +47,7 @@ public abstract class HeartType implements Comparable<HeartType> {
     public HeartType(ResourceLocation id, double priority) {
         this.id = id;
         this.priority = priority;
+        resourceKey = ResourceKey.create(HeartyRegistries.HEART_TYPE_KEY, id);
     }
 
     @Override
@@ -80,5 +87,28 @@ public abstract class HeartType implements Comparable<HeartType> {
      */
     public static HeartType basic(ResourceLocation id, double priority, Function<GuiContext, Integer> getNumber, ResourceLocation texture) {
         return basicSuppliers(id, priority, getNumber, (a) -> texture);
+    }
+
+    /**
+     * @param id the id to check against
+     * @return whether or not our id matches the given parameter.
+     */
+    public boolean is(ResourceLocation id) {
+        return id.equals(this.id);
+    }
+
+    /**
+     * @param tag the tag to check against
+     * @param registries access to the registries
+     * @return whether or not our id matches the given parameter.
+     */
+    public boolean is(TagKey<HeartType> tag, RegistryAccess registries) {
+        return registries.holder(resourceKey)
+                .map(heartTypeReference ->
+                        registries.lookup(HeartyRegistries.HEART_TYPE_KEY)
+                                .flatMap(it -> it.get(tag))
+                                .map(it -> it.contains(heartTypeReference))
+                                .orElse(false)
+                ).orElse(false);
     }
 }
