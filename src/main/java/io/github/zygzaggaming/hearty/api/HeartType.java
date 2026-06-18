@@ -98,6 +98,14 @@ public abstract class HeartType implements Comparable<HeartType> {
     }
 
     /**
+     * @param id the id to check against
+     * @return whether or not our id matches the given parameter.
+     */
+    public boolean is(ResourceKey<HeartType> id) {
+        return id.location().equals(this.id);
+    }
+
+    /**
      * @param tag the tag to check against
      * @param registries access to the registries
      * @return whether or not our id matches the given parameter.
