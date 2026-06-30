@@ -76,7 +76,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.NEW_TAG }}
-          name: Hearty ${{ env.NEW_VERSION }} for Neoforge ${{ env.MC_VERSION }}
+          name: Hearty API ${{ env.NEW_VERSION }} for Neoforge ${{ env.MC_VERSION }}
           body: |
             ## What's New
             <https://github.com/ZygZagGaming/hearty-api/compare/${{ env.OLD_TAG }}...${{ env.NEW_TAG }}>
