@@ -84,15 +84,4 @@ jobs:
           prerelease: false
           make_latest: ${{ inputs.mark_latest }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Trigger Downstream Workflow
-        uses: actions/github-script@v9
-        with:
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'publish-packages-1.21.1.yml',
-              ref: '${{ env.NEW_TAG }}',
-            })
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
