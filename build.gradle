@@ -6,7 +6,7 @@ plugins {
     alias libs.plugins.ng.userdev
 }
 
-version = System.getenv("VERSION") ?: version
+version = System.getenv("VERSION") ?: (loader + "-" + mc_version + "-" + api_version)
 group = group_id
 
 repositories {
@@ -127,7 +127,7 @@ publishing {
             artifact tasks.sourcesJar
             artifact tasks.javadocJar
 
-            version = System.getenv("VERSION") ?: project.version
+            version = System.getenv("VERSION") ?: (loader + "-" + mc_version + "-" + api_version)
 
             pom {
                 name = "hearty-api"
