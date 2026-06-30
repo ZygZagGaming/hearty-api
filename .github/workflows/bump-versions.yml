@@ -62,7 +62,7 @@ jobs:
           git add gradle.properties
           git commit -m "chore: bump version to $NEW_VERSION [skip ci]"
           echo "NEW_TAG=$LOADER-$MC_VERSION-$NEW_VERSION" >> $GITHUB_ENV
-          echo "OLD_TAG=$LOADER-$MC_VERSION-$MOD_VERSION" >> $GITHUB_ENV
+          echo "OLD_TAG=$LOADER-$MC_VERSION-$CURRENT_VERSION" >> $GITHUB_ENV
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
           echo "MC_VERSION=$MC_VERSION" >> $GITHUB_ENV
 
@@ -79,7 +79,7 @@ jobs:
           name: Hearty ${{ env.NEW_VERSION }} for Neoforge ${{ env.MC_VERSION }}
           body: |
             ## What's New
-            <https://github.com/ZygZagGaming/hearty/compare/${{ env.OLD_TAG }}...${{ env.NEW_TAG }}>
+            <https://github.com/ZygZagGaming/hearty-api/compare/${{ env.OLD_TAG }}...${{ env.NEW_TAG }}>
           draft: false
           prerelease: false
           make_latest: ${{ inputs.mark_latest }}
