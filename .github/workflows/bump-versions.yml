@@ -83,5 +83,6 @@ jobs:
           draft: false
           prerelease: false
           make_latest: ${{ inputs.mark_latest }}
+          token: ${{ secrets.ACTIONS_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
