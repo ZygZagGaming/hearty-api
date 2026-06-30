@@ -61,7 +61,10 @@ jobs:
           sed -i "s/^api_version=.*/api_version=$NEW_VERSION/" gradle.properties
           git add gradle.properties
           git commit -m "chore: bump version to $NEW_VERSION [skip ci]"
-          echo "NEW_TAG=$LOADER-$MC_VERSION-$NEW_VERSION OLD_TAG=$LOADER-$MC_VERSION-$MOD_VERSION NEW_VERSION=$NEW_VERSION MC_VERSION=$MC_VERSION" >> $GITHUB_ENV
+          echo "NEW_TAG=$LOADER-$MC_VERSION-$NEW_VERSION" >> $GITHUB_ENV
+          echo "OLD_TAG=$LOADER-$MC_VERSION-$MOD_VERSION" >> $GITHUB_ENV
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "MC_VERSION=$MC_VERSION" >> $GITHUB_ENV
 
       - name: Push changes
         run: |
