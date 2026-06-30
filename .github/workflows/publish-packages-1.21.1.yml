@@ -1,7 +1,7 @@
 name: Publish package to GitHub Packages
 on:
   release:
-    types: [created, edited]
+    types: [published]
     tags: neoforge-1.21.1-*
   workflow_dispatch:
 jobs:
