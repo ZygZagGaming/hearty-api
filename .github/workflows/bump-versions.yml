@@ -65,7 +65,7 @@ jobs:
 
       - name: Push changes
         run: |
-          git push origin $GITHUB_REF_NAME
+          git push origin {{ github.ref_name }}
           git tag $NEW_TAG
           git push origin $NEW_TAG
 
