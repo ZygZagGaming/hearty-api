@@ -3,14 +3,13 @@ package io.github.zygzaggaming.hearty.api;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 
 /**
  * Contains data available when rendering a single heart, <u>regardless</u> of type.
  *
  * @see HeartLayer
- * @see HalfHeartLayer
+ * @see HeartUnitLayer
  * @author ZygZagGaming
  */
 public class HeartContext extends GuiContext {

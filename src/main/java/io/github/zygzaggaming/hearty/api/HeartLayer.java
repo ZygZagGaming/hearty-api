@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * <code>HeartLayer</code>s modify and manipulate rendered hearts for additional visual effects not provided by <code>HeartType</code>s.
  *
- * @see HalfHeartLayer
+ * @see HeartUnitLayer
  * @author ZygZagGaming
  */
 public abstract class HeartLayer implements Comparable<HeartLayer> {
